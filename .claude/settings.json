@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(git add src/components/sections/Hero.tsx)",
+      "PowerShell(git commit -m \"style: soften hero height and center content\")",
+      "PowerShell(git add src/components/sections/SelectedWork.tsx)",
+      "PowerShell(git commit -m \"perf: lazy-load selected work screenshots\")",
+      "PowerShell(git commit -m \"fix: require name, email, and message on contact form\")",
+      "PowerShell(git add src/App.tsx)",
+      "PowerShell(git commit -m \"feat: add skip-to-content link for keyboard users\")",
+      "PowerShell(git add index.html)",
+      "PowerShell(git commit -m \"style: add warm cream theme-color for mobile browser chrome\")",
+      "PowerShell(git add src/styles/designTokens.ts src/components/sections/Hero.tsx src/components/sections/Services.tsx src/components/sections/WhyKreativIT.tsx src/components/sections/SelectedWork.tsx src/components/sections/Contact.tsx)",
+      "PowerShell(git commit -m \"style: centralize section surfaces into warm cream/plain token\")",
+      "PowerShell(git add src/styles/designTokens.ts src/components/sections/WhyKreativIT.tsx src/components/sections/SelectedWork.tsx src/components/sections/Contact.tsx)",
+      "PowerShell(git commit -m \"style: warm card surfaces with stone token\")"
+    ]
+  }
+}

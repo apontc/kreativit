@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { surfaces } from "../../styles/designTokens";
+
 
 const navLinks = [
   {
@@ -27,7 +29,7 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur">
+    <header className={`sticky top-0 z-50 ${surfaces.cardMuted} border-b border-[#D8C3A6] ...`}>
       <nav className="mx-auto max-w-6xl px-6">
         <div className="flex h-16 items-center justify-between">
           <a
