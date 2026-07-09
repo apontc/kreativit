@@ -1,17 +1,19 @@
+import { buttons, layout, siteConfig } from '../../styles/designTokens'
+
 export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen bg-orange-50 px-6 py-20 text-slate-950"
+      className={`${layout.section} min-h-screen bg-orange-50 text-slate-950`}
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-8">
+      <div className={`${layout.container} flex flex-col gap-8`}>
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-700">
-          KreativIT
+          {siteConfig.name}
         </p>
 
         <div className="max-w-3xl">
           <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-            Turning ideas into reliable web applications.
+            {siteConfig.tagline}
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-slate-700">
@@ -21,17 +23,11 @@ export function Hero() {
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a
-            href="#contact"
-            className="rounded-full bg-slate-950 px-6 py-3 text-center font-medium text-white"
-          >
+          <a href="#contact" className={buttons.primary}>
             Start a project
           </a>
 
-          <a
-            href="#work"
-            className="rounded-full border border-slate-300 px-6 py-3 text-center font-medium text-slate-900"
-          >
+          <a href="#work" className={buttons.secondary}>
             View selected work
           </a>
         </div>
