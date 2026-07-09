@@ -17,6 +17,10 @@ dist-ssr
 .env.*
 !.env.example
 
+# Internal project docs (kept local, not tracked)
+PROJECT_SPEC.md
+PROJECT_STATUS.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
