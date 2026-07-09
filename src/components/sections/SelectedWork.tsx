@@ -95,6 +95,7 @@ export function SelectedWork() {
                       key={screenshot.src}
                       src={screenshot.src}
                       alt={screenshot.alt}
+                      loading="lazy"
                       className="rounded-2xl border border-slate-200 shadow-sm"
                     />
                   ))}
