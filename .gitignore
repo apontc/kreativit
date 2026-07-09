@@ -20,6 +20,7 @@ dist-ssr
 # Internal project docs (kept local, not tracked)
 PROJECT_SPEC.md
 PROJECT_STATUS.md
+CLAUDE.md
 
 # Editor directories and files
 .vscode/*
