@@ -1,5 +1,5 @@
-import { buttons, layout, siteConfig } from '../../styles/designTokens'
-
+import { siteConfig } from '../../config/site'
+import { buttons, layout } from '../../styles/designTokens'
 export function Hero() {
   return (
     <section
