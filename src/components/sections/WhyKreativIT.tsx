@@ -23,7 +23,7 @@ export function WhyKreativIT() {
           {whyKreativIT.reasons.map((reason) => (
             <article
               key={reason.title}
-              className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+              className={`rounded-3xl border border-slate-200 ${surfaces.card} p-6 shadow-sm`}
             >
               <h3 className="text-lg font-semibold text-slate-950">
                 {reason.title}

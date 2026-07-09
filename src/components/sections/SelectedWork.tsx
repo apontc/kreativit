@@ -69,7 +69,7 @@ export function SelectedWork() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-slate-100 p-5">
+                <div className={`rounded-2xl ${surfaces.cardMuted} p-5`}>
                   <h4 className="font-semibold text-slate-950">
                     Challenges solved
                   </h4>

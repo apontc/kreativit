@@ -8,11 +8,13 @@ export const text = {
   eyebrow: 'text-sm font-semibold uppercase tracking-[0.25em] text-orange-700',
 }
 
-// Section background surfaces. Sections alternate cream → plain down the page;
-// change a background here rather than in individual sections.
+// Background surfaces. Sections alternate cream → plain down the page; cards
+// sit on top of them. Change a surface here rather than in individual sections.
 export const surfaces = {
   cream: 'bg-orange-50',
   plain: 'bg-white',
+  card: 'bg-stone-50',
+  cardMuted: 'bg-stone-100',
 }
 
 const buttonBase =

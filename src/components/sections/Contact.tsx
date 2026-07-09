@@ -61,7 +61,7 @@ export function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8"
+          className={`rounded-3xl border border-slate-200 ${surfaces.card} p-6 shadow-sm sm:p-8`}
         >
           <div className="grid gap-6">
             <div>
