@@ -4,6 +4,7 @@ import { Services } from './components/sections/Services'
 import { WhyKreativIT } from "./components/sections/WhyKreativIT";
 import { SelectedWork } from "./components/sections/SelectedWork";
 import { Contact } from "./components/sections/Contact";
+import { Footer } from "./components/layout/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <WhyKreativIT />
         <SelectedWork/>
         <Contact />
+        <Footer />
       </main>
     </>
   )
