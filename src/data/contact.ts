@@ -1,3 +1,5 @@
+import { site } from "../config/site";
+
 type ContactLink = {
   label: string;
   href: string;
@@ -16,15 +18,15 @@ export const contact: ContactContent = {
   heading: "Have a project in mind?",
   intro:
     "Tell me a little about what you need, and I’ll get back to you as soon as I can.",
-  email: "kreativit.berlin@gmail.com",
+  email: site.contact.email,
   links: [
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/your-profile",
+      href: site.socialLinks.linkedin,
     },
     {
       label: "GitHub",
-      href: "https://github.com/carinvazef",
+      href: site.socialLinks.github,
     },
   ],
 };

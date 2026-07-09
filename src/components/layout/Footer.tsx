@@ -1,4 +1,4 @@
-import { footer } from "../../data/footer";
+import { site } from "../../config/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -7,11 +7,13 @@ export function Footer() {
     <footer className="border-t border-slate-200 bg-white px-6 py-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="font-semibold text-slate-950">{footer.businessName}</p>
-          <p className="mt-1">{footer.tagline}</p>
+          <p className="font-semibold text-slate-950">{site.businessName}</p>
+          <p className="mt-1">{site.tagline}</p>
         </div>
 
-        <p>© {year} {footer.businessName}. All rights reserved.</p>
+        <p>
+          © {year} {site.businessName}. All rights reserved.
+        </p>
       </div>
     </footer>
   );

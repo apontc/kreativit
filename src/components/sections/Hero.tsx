@@ -1,4 +1,4 @@
-import { siteConfig } from '../../config/site'
+import { site } from '../../config/site'
 import { buttons, layout } from '../../styles/designTokens'
 export function Hero() {
   return (
@@ -8,12 +8,12 @@ export function Hero() {
     >
       <div className={`${layout.container} flex flex-col gap-8`}>
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-700">
-          {siteConfig.name}
+          {site.businessName}
         </p>
 
         <div className="max-w-3xl">
           <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-            {siteConfig.tagline}
+            {site.tagline}
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-slate-700">
