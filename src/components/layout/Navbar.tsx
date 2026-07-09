@@ -56,6 +56,7 @@ export function Navbar() {
             className="inline-flex items-center rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 md:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
             {isMenuOpen ? "Close" : "Menu"}
           </button>

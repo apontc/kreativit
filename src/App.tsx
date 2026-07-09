@@ -17,8 +17,8 @@ function App() {
         <WhyKreativIT />
         <SelectedWork/>
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
   )
 }
