@@ -16,7 +16,7 @@ export const contact: ContactContent = {
   heading: "Have a project in mind?",
   intro:
     "Tell me a little about what you need, and I’ll get back to you as soon as I can.",
-  email: "your-email@example.com",
+  email: "kreativit.berlin@gmail.com",
   links: [
     {
       label: "LinkedIn",
@@ -24,7 +24,7 @@ export const contact: ContactContent = {
     },
     {
       label: "GitHub",
-      href: "https://github.com/your-username",
+      href: "https://github.com/carinvazef",
     },
   ],
 };
