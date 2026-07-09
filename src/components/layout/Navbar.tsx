@@ -1,28 +1,82 @@
+import { useState } from "react"
+
+const navLinks = [
+  {
+    label: "Services",
+    href: "#services",
+  },
+  {
+    label: "Why KreativIT",
+    href: "#why",
+  },
+  {
+    label: "Work",
+    href: "#work",
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+  },
+]
+
 export function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  function closeMenu() {
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a
-          href="#hero"
-          className="text-lg font-bold tracking-tight text-slate-950"
-        >
-          KreativIT
-        </a>
+      <nav className="mx-auto max-w-6xl px-6">
+        <div className="flex h-16 items-center justify-between">
+          <a
+            href="#hero"
+            onClick={closeMenu}
+            className="text-lg font-bold tracking-tight text-slate-950"
+          >
+            KreativIT
+          </a>
 
-        <div className="hidden gap-8 md:flex">
-          <a href="#services" className="text-slate-600 hover:text-slate-950">
-            Services
-          </a>
-          <a href="#why" className="text-slate-600 hover:text-slate-950">
-            Why Me
-          </a>
-          <a href="#work" className="text-slate-600 hover:text-slate-950">
-            Work
-          </a>
-          <a href="#contact" className="text-slate-600 hover:text-slate-950">
-            Contact
-          </a>
+          <div className="hidden gap-8 md:flex">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-slate-600 hover:text-slate-950"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((current) => !current)}
+            className="inline-flex items-center rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 md:hidden"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {isMenuOpen ? "Close" : "Menu"}
+          </button>
         </div>
+
+        {isMenuOpen && (
+          <div id="mobile-menu" className="border-t border-slate-200 py-4 md:hidden">
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className="text-slate-600 hover:text-slate-950"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   )
