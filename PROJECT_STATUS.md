@@ -3,12 +3,13 @@
 **Last Updated:** July 9, 2026
 
 Current milestone
-├── Why KreativIT
+├── Selected Work (Lineup)
 
 Completed
 ├── Navbar
 ├── Hero
 ├── Services
+├── Why KreativIT
 
 Current architecture
 
@@ -129,7 +130,7 @@ src/data/
 Current data files:
 
 * services.ts
-* why.ts
+* whyKreativIT.ts
 
 Future additions include:
 
@@ -199,20 +200,31 @@ Current services:
 
 ---
 
+## Why KreativIT
+
+Completed.
+
+Data-driven.
+
+Uses:
+
+```
+src/data/whyKreativIT.ts
+src/styles/designTokens.ts
+```
+
+Wired into App.tsx.
+
+---
+
 # In Progress
 
-```
-src/data/why.ts
-```
-
-The data has been created.
-
-The component has **not yet been built**.
+Selected Work (Lineup) — not yet started.
 
 Next task:
 
 ```
-src/components/sections/WhyKreativIT.tsx
+src/components/sections/SelectedWork.tsx
 ```
 
 ---
@@ -299,20 +311,18 @@ Completed milestones include:
 * Services data
 * Services section
 * Why section data
+* Why KreativIT section
+* Real button styles in design tokens
 
 ---
 
 # Next Tasks
 
-1. Build the Why KreativIT section.
+1. Build the Selected Work (Lineup) section.
 2. Integrate it into App.tsx.
-3. Verify.
-4. Commit:
-
-   ```
-   feat: add why section
-   ```
-5. Begin the Selected Work (Lineup) section.
+3. Build the Contact section (form, email, LinkedIn, GitHub).
+4. Populate social links in `src/config/site.ts`.
+5. Add a mobile navigation menu to the Navbar.
 
 ---
 
