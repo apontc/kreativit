@@ -1,9 +1,9 @@
 import { selectedWork } from "../../data/selectedWork";
-import { layout, text } from "../../styles/designTokens";
+import { layout, surfaces, text } from "../../styles/designTokens";
 
 export function SelectedWork() {
   return (
-    <section id="work" className={`bg-slate-50 ${layout.section}`}>
+    <section id="work" className={`${surfaces.plain} ${layout.section}`}>
       <div className={layout.container}>
         <div className="max-w-2xl">
           <p className={text.eyebrow}>

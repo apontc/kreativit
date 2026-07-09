@@ -1,9 +1,9 @@
 import { whyKreativIT } from "../../data/whyKreativIT";
-import { layout, text } from "../../styles/designTokens";
+import { layout, surfaces, text } from "../../styles/designTokens";
 
 export function WhyKreativIT() {
   return (
-    <section id="why" className={`bg-white ${layout.section}`}>
+    <section id="why" className={`${surfaces.cream} ${layout.section}`}>
       <div className={layout.container}>
         <div className="max-w-2xl">
           <p className={text.eyebrow}>

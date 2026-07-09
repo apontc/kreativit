@@ -8,6 +8,13 @@ export const text = {
   eyebrow: 'text-sm font-semibold uppercase tracking-[0.25em] text-orange-700',
 }
 
+// Section background surfaces. Sections alternate cream → plain down the page;
+// change a background here rather than in individual sections.
+export const surfaces = {
+  cream: 'bg-orange-50',
+  plain: 'bg-white',
+}
+
 const buttonBase =
   'inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
 

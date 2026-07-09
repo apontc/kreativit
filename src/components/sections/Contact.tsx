@@ -1,5 +1,5 @@
 import { contact } from "../../data/contact";
-import { layout, text } from "../../styles/designTokens";
+import { layout, surfaces, text } from "../../styles/designTokens";
 
 export function Contact() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -20,7 +20,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className={`bg-white ${layout.section}`}>
+    <section id="contact" className={`${surfaces.cream} ${layout.section}`}>
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
           <p className={text.eyebrow}>

@@ -1,9 +1,9 @@
 import { services } from '../../data/services'
-import { layout, text } from '../../styles/designTokens'
+import { layout, surfaces, text } from '../../styles/designTokens'
 
 export function Services() {
   return (
-    <section id="services" className={layout.section}>
+    <section id="services" className={`${surfaces.plain} ${layout.section}`}>
       <div className={layout.container}>
         <div className="max-w-2xl">
           <p className={text.eyebrow}>
