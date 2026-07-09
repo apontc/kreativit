@@ -2,7 +2,7 @@ import { whyKreativIT } from "../../data/whyKreativIT";
 
 export function WhyKreativIT() {
   return (
-    <section id="why" className="bg-white px-6 py-20 sm:py-24">
+    <section id="why" className="scroll-mt-20 bg-white px-6 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-orange-600">
