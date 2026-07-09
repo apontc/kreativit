@@ -15,7 +15,7 @@ export const surfaces = {
   plain: "bg-white",
   card: "bg-white border border-[#E7DAC6]", // lifts on cream sections
   cardMuted: "bg-[#E5D1B9] border border-[#D8C3A6]", // wood-tan tint (cards / blocks)
-  band: "bg-[#E5D1B9]", // wood-tan navbar band — pair with `border-b border-[#D8C3A6]`
+  band: "bg-[#E5D1B9] border-b border-[#D8C3A6]", // wood-tan navbar band (surface + bottom border)
 };
 
 export const text = {

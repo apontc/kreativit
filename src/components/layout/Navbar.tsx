@@ -29,7 +29,7 @@ export function Navbar() {
   }
 
   return (
-    <header className={`sticky top-0 z-50 ${surfaces.cardMuted} border-b border-[#D8C3A6] ...`}>
+    <header className={`sticky top-0 z-50 ${surfaces.band} ...`}>
       <nav className="mx-auto max-w-6xl px-6">
         <div className="flex h-16 items-center justify-between">
           <a
