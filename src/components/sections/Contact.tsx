@@ -1,11 +1,29 @@
 import { contact } from "../../data/contact";
+import { layout, text } from "../../styles/designTokens";
 
 export function Contact() {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const subject = `New project inquiry${name ? ` from ${name}` : ""}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+
+    window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  }
+
   return (
-    <section id="contact" className="scroll-mt-20 bg-white px-6 py-20 sm:py-24">
+    <section id="contact" className={`bg-white ${layout.section}`}>
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-orange-600">
+          <p className={text.eyebrow}>
             {contact.eyebrow}
           </p>
 
@@ -41,7 +59,10 @@ export function Contact() {
           </div>
         </div>
 
-        <form className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+        <form
+          onSubmit={handleSubmit}
+          className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8"
+        >
           <div className="grid gap-6">
             <div>
               <label
