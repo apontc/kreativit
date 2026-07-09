@@ -1,16 +1,16 @@
 import { services } from '../../data/services'
-import { layout } from '../../styles/designTokens'
+import { layout, text } from '../../styles/designTokens'
 
 export function Services() {
   return (
     <section id="services" className={layout.section}>
       <div className={layout.container}>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-700">
+          <p className={text.eyebrow}>
             Services
           </p>
 
-          <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-950">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
             What I can help you build
           </h2>
 

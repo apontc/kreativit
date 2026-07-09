@@ -1,5 +1,5 @@
 import { site } from '../../config/site'
-import { buttons, layout } from '../../styles/designTokens'
+import { buttons, layout, text } from '../../styles/designTokens'
 export function Hero() {
   return (
     <section
@@ -7,7 +7,7 @@ export function Hero() {
       className={`${layout.section} min-h-screen bg-orange-50 text-slate-950`}
     >
       <div className={`${layout.container} flex flex-col gap-8`}>
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-700">
+        <p className={text.eyebrow}>
           {site.businessName}
         </p>
 

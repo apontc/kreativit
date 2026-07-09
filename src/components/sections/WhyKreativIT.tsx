@@ -1,12 +1,12 @@
 import { whyKreativIT } from "../../data/whyKreativIT";
-import { layout } from "../../styles/designTokens";
+import { layout, text } from "../../styles/designTokens";
 
 export function WhyKreativIT() {
   return (
-    <section id="why" className={`scroll-mt-20 bg-white ${layout.section}`}>
+    <section id="why" className={`bg-white ${layout.section}`}>
       <div className={layout.container}>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-700">
+          <p className={text.eyebrow}>
             {whyKreativIT.eyebrow}
           </p>
 

@@ -1,11 +1,12 @@
 import { selectedWork } from "../../data/selectedWork";
+import { layout, text } from "../../styles/designTokens";
 
 export function SelectedWork() {
   return (
-    <section id="work" className="scroll-mt-20 bg-slate-50 px-6 py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="work" className={`bg-slate-50 ${layout.section}`}>
+      <div className={layout.container}>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-orange-600">
+          <p className={text.eyebrow}>
             {selectedWork.eyebrow}
           </p>
 

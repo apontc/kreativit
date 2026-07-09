@@ -1,7 +1,11 @@
 export const layout = {
-  section: 'px-6 py-20 sm:py-28',
+  section: 'scroll-mt-20 px-6 py-20 sm:py-28',
   container: 'mx-auto max-w-6xl',
   narrowContainer: 'mx-auto max-w-3xl',
+}
+
+export const text = {
+  eyebrow: 'text-sm font-semibold uppercase tracking-[0.25em] text-orange-700',
 }
 
 const buttonBase =
