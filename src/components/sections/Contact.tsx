@@ -76,6 +76,7 @@ export function Contact() {
                 name="name"
                 type="text"
                 autoComplete="name"
+                required
                 className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               />
             </div>
@@ -92,6 +93,7 @@ export function Contact() {
                 name="email"
                 type="email"
                 autoComplete="email"
+                required
                 className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               />
             </div>
@@ -107,6 +109,7 @@ export function Contact() {
                 id="message"
                 name="message"
                 rows={6}
+                required
                 className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               />
             </div>
