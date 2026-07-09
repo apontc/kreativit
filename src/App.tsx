@@ -3,6 +3,8 @@ import { Hero } from './components/sections/Hero'
 import { Services } from './components/sections/Services'
 import { WhyKreativIT } from "./components/sections/WhyKreativIT";
 import { SelectedWork } from "./components/sections/SelectedWork";
+import { Contact } from "./components/sections/Contact";
+
 function App() {
   return (
     <>
@@ -13,7 +15,7 @@ function App() {
         <Services />
         <WhyKreativIT />
         <SelectedWork/>
-        <section id="contact">Contact</section>
+        <Contact />
       </main>
     </>
   )
