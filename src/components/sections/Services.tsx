@@ -25,7 +25,7 @@ export function Services() {
           {services.map((service) => (
             <article
               key={service.title}
-              className={`rounded-2xl ${borders.hair} bg-white p-6 transition hover:border-[#A76731]`}
+              className={`rounded-2xl ${borders.hair} bg-white p-6`}
             >
               <h3 className={`text-xl font-semibold ${text.heading}`}>
                 {service.title}

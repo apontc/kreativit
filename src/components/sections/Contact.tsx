@@ -21,7 +21,7 @@ export function Contact() {
 
   return (
     <section id="contact" className={`${surfaces.cream} ${layout.section} min-h-[calc(100vh-4rem)]`}>
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div className={`mx-auto grid max-w-6xl gap-12 ${layout.gutter} lg:grid-cols-[0.9fr_1.1fr] lg:items-start`}>
         <div>
           <p className={text.eyebrow}>
             {contact.eyebrow}

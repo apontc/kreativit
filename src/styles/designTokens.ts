@@ -3,9 +3,15 @@
 // Palette: WOOD — light cream base (#F8F4ED) with a wood-tan accent band (#E5D1B9),
 // navy ink (#1E2A37), amber-wood accent (#A76731), slate-blue secondary (#666D76).
 
+// Side gutter — single source for horizontal breathing room. Baked into
+// `container`; apply `layout.gutter` directly on any wrapper that sets its own
+// max-width (Navbar / Footer / Contact) so the mobile gutter stays consistent.
+const gutter = "px-6";
+
 export const layout = {
+  gutter,
   section: "scroll-mt-16 py-20 sm:py-28",
-  container: "mx-auto w-full max-w-5xl px-6",
+  container: `mx-auto w-full max-w-5xl ${gutter}`,
 };
 
 // Alternating section surfaces down the page: cream → plain → cream …
@@ -51,6 +57,6 @@ export const buttons = {
   primary: `${buttonBase} bg-[#A76731] text-white shadow-sm hover:bg-[#8F5629] focus-visible:outline-[#A76731]`,
   // Secondary fill is the OPPOSITE surface of the section it sits in, so it never
   // blends into the background. Use `secondary` on cream sections, `secondaryOnPlain` on white.
-  secondary: `${buttonBase} bg-white ${borders.strong} text-[#1E2A37] hover:border-[#A76731] hover:bg-[#F8F4ED] focus-visible:outline-[#A76731]`,
-  secondaryOnPlain: `${buttonBase} bg-[#F8F4ED] ${borders.strong} text-[#1E2A37] hover:border-[#A76731] hover:bg-white focus-visible:outline-[#A76731]`,
+  secondary: `${buttonBase} bg-white ${borders.strong} text-[#1E2A37] hover:border-[#A76731] hover:bg-[#F2E7D5] focus-visible:outline-[#A76731]`,
+  secondaryOnPlain: `${buttonBase} bg-[#F8F4ED] ${borders.strong} text-[#1E2A37] hover:border-[#A76731] hover:bg-[#F2E7D5] focus-visible:outline-[#A76731]`,
 };

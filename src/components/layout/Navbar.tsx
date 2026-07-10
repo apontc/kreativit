@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { surfaces, text } from "../../styles/designTokens";
+import { layout, surfaces, text } from "../../styles/designTokens";
 
 
 const navLinks = [
@@ -30,7 +30,7 @@ export function Navbar() {
 
   return (
     <header className={`sticky top-0 z-50 ${surfaces.band}`}>
-      <nav className="mx-auto max-w-6xl px-6">
+      <nav className={`mx-auto max-w-6xl ${layout.gutter}`}>
         <div className="flex h-16 items-center justify-between">
           <a
             href="#hero"
