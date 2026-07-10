@@ -4,7 +4,7 @@
 // navy ink (#1E2A37), amber-wood accent (#A76731), slate-blue secondary (#666D76).
 
 export const layout = {
-  section: "scroll-mt-24 py-20 sm:py-28",
+  section: "scroll-mt-16 py-20 sm:py-28",
   container: "mx-auto w-full max-w-5xl px-6",
 };
 
@@ -18,11 +18,29 @@ export const surfaces = {
   band: "bg-[#E5D1B9] border-b border-[#D8C3A6]", // wood-tan navbar band (surface + bottom border)
 };
 
+// Wood-tan hairlines. Each string includes the `border` width, so use them alone
+// (e.g. `${borders.hair} bg-white`). For a single edge, inline the color instead
+// (e.g. `border-t border-[#D8C3A6]`).
+export const borders = {
+  hair: "border border-[#E7DAC6]", // subtle hairline on cream/white (cards, images)
+  strong: "border border-[#D8C3A6]", // deeper wood-tan (inputs, buttons)
+};
+
 export const text = {
   eyebrow: "text-sm font-semibold uppercase tracking-[0.25em] text-[#A76731]",
   heading: "text-[#1E2A37]", // navy ink (~slate-800)
   body: "text-[#5B6470]",
   link: "text-[#666D76] underline-offset-4 hover:underline hover:text-[#525963]",
+  interactive: "text-[#5B6470] hover:text-[#1E2A37]", // muted → ink on hover (nav, footer, inline links)
+};
+
+// Amber-wood accent — the single "pop" color across the page.
+export const accent = {
+  text: "text-[#A76731]",
+  hover: "hover:text-[#A76731]",
+  dot: "bg-[#A76731]", // filled markers (bullets)
+  chip: "bg-[#F2E7D5] text-[#A76731]", // soft wood-tint pill (tags)
+  ring: "focus:ring-[#EADFCB]", // pale wood focus ring (form inputs / buttons)
 };
 
 const buttonBase =
@@ -33,6 +51,6 @@ export const buttons = {
   primary: `${buttonBase} bg-[#A76731] text-white shadow-sm hover:bg-[#8F5629] focus-visible:outline-[#A76731]`,
   // Secondary fill is the OPPOSITE surface of the section it sits in, so it never
   // blends into the background. Use `secondary` on cream sections, `secondaryOnPlain` on white.
-  secondary: `${buttonBase} bg-white border border-slate-300 text-slate-950 hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-slate-400`,
-  secondaryOnPlain: `${buttonBase} bg-[#F8F4ED] border border-slate-300 text-slate-950 hover:border-slate-400 hover:bg-white focus-visible:outline-slate-400`,
+  secondary: `${buttonBase} bg-white ${borders.strong} text-[#1E2A37] hover:border-[#A76731] hover:bg-[#F8F4ED] focus-visible:outline-[#A76731]`,
+  secondaryOnPlain: `${buttonBase} bg-[#F8F4ED] ${borders.strong} text-[#1E2A37] hover:border-[#A76731] hover:bg-white focus-visible:outline-[#A76731]`,
 };

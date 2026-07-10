@@ -1,5 +1,5 @@
 import { contact } from "../../data/contact";
-import { layout, surfaces, text } from "../../styles/designTokens";
+import { accent, borders, layout, surfaces, text } from "../../styles/designTokens";
 
 export function Contact() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -20,25 +20,25 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className={`${surfaces.cream} ${layout.section}`}>
+    <section id="contact" className={`${surfaces.cream} ${layout.section} min-h-[calc(100vh-4rem)]`}>
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
           <p className={text.eyebrow}>
             {contact.eyebrow}
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className={`mt-3 text-3xl font-bold tracking-tight sm:text-4xl ${text.heading}`}>
             {contact.heading}
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-slate-700">
+          <p className={`mt-5 text-lg leading-8 ${text.body}`}>
             {contact.intro}
           </p>
 
           <div className="mt-8 space-y-4">
             <a
               href={`mailto:${contact.email}`}
-              className="block font-medium text-slate-950 hover:text-orange-700"
+              className={`block font-medium ${text.heading} ${accent.hover}`}
             >
               {contact.email}
             </a>
@@ -50,7 +50,7 @@ export function Contact() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-medium text-slate-600 hover:text-slate-950"
+                  className={`font-medium ${text.interactive}`}
                 >
                   {link.label}
                 </a>
@@ -61,13 +61,13 @@ export function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className={`rounded-3xl border border-slate-200 ${surfaces.card} p-6 shadow-sm sm:p-8`}
+          className={`rounded-3xl ${surfaces.card} p-6 shadow-sm sm:p-8`}
         >
           <div className="grid gap-6">
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-slate-950"
+                className={`block text-sm font-medium ${text.heading}`}
               >
                 Name
               </label>
@@ -77,14 +77,14 @@ export function Contact() {
                 type="text"
                 autoComplete="name"
                 required
-                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+                className={`mt-2 w-full rounded-xl ${borders.strong} bg-white px-4 py-3 ${text.heading} outline-none focus:border-[#A76731] focus:ring-4 ${accent.ring}`}
               />
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-slate-950"
+                className={`block text-sm font-medium ${text.heading}`}
               >
                 Email
               </label>
@@ -94,14 +94,14 @@ export function Contact() {
                 type="email"
                 autoComplete="email"
                 required
-                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+                className={`mt-2 w-full rounded-xl ${borders.strong} bg-white px-4 py-3 ${text.heading} outline-none focus:border-[#A76731] focus:ring-4 ${accent.ring}`}
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-slate-950"
+                className={`block text-sm font-medium ${text.heading}`}
               >
                 Project details
               </label>
@@ -110,13 +110,13 @@ export function Contact() {
                 name="message"
                 rows={6}
                 required
-                className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+                className={`mt-2 w-full rounded-xl ${borders.strong} bg-white px-4 py-3 ${text.heading} outline-none focus:border-[#A76731] focus:ring-4 ${accent.ring}`}
               />
             </div>
 
             <button
               type="submit"
-              className="rounded-full bg-orange-600 px-6 py-3 font-semibold text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-4 focus:ring-orange-200"
+              className={`rounded-full bg-[#A76731] px-6 py-3 font-semibold text-white shadow-sm hover:bg-[#8F5629] focus:outline-none focus:ring-4 ${accent.ring}`}
             >
               Send message
             </button>

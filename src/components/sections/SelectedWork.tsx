@@ -1,5 +1,5 @@
 import { selectedWork } from "../../data/selectedWork";
-import { layout, surfaces, text } from "../../styles/designTokens";
+import { accent, borders, layout, surfaces, text } from "../../styles/designTokens";
 
 export function SelectedWork() {
   return (
@@ -10,11 +10,11 @@ export function SelectedWork() {
             {selectedWork.eyebrow}
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className={`mt-3 text-3xl font-bold tracking-tight sm:text-4xl ${text.heading}`}>
             {selectedWork.heading}
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-slate-700">
+          <p className={`mt-5 text-lg leading-8 ${text.body}`}>
             {selectedWork.intro}
           </p>
         </div>
@@ -23,36 +23,36 @@ export function SelectedWork() {
           {selectedWork.projects.map((project) => (
             <article
               key={project.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+              className={`rounded-3xl ${surfaces.card} p-6 shadow-sm sm:p-8`}
             >
               <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight text-slate-950">
+                  <h3 className={`text-2xl font-bold tracking-tight ${text.heading}`}>
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-lg leading-8 text-slate-700">
+                  <p className={`mt-4 text-lg leading-8 ${text.body}`}>
                     {project.summary}
                   </p>
 
                   <div className="mt-8 grid gap-6 sm:grid-cols-2">
                     <div>
-                      <h4 className="font-semibold text-slate-950">Problem</h4>
-                      <p className="mt-2 leading-7 text-slate-700">
+                      <h4 className={`font-semibold ${text.heading}`}>Problem</h4>
+                      <p className={`mt-2 leading-7 ${text.body}`}>
                         {project.problem}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-slate-950">My role</h4>
-                      <p className="mt-2 leading-7 text-slate-700">
+                      <h4 className={`font-semibold ${text.heading}`}>My role</h4>
+                      <p className={`mt-2 leading-7 ${text.body}`}>
                         {project.role}
                       </p>
                     </div>
                   </div>
 
                   <div className="mt-8">
-                    <h4 className="font-semibold text-slate-950">
+                    <h4 className={`font-semibold ${text.heading}`}>
                       Technologies used
                     </h4>
 
@@ -60,7 +60,7 @@ export function SelectedWork() {
                       {project.technologies.map((technology) => (
                         <span
                           key={technology}
-                          className="rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700"
+                          className={`rounded-full px-3 py-1 text-sm font-medium ${accent.chip}`}
                         >
                           {technology}
                         </span>
@@ -70,7 +70,7 @@ export function SelectedWork() {
                 </div>
 
                 <div className={`rounded-2xl ${surfaces.cardMuted} p-5`}>
-                  <h4 className="font-semibold text-slate-950">
+                  <h4 className={`font-semibold ${text.heading}`}>
                     Challenges solved
                   </h4>
 
@@ -78,9 +78,9 @@ export function SelectedWork() {
                     {project.challenges.map((challenge) => (
                       <li
                         key={challenge}
-                        className="flex gap-3 leading-7 text-slate-700"
+                        className={`flex gap-3 leading-7 ${text.body}`}
                       >
-                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-orange-500" />
+                        <span className={`mt-2 h-2 w-2 shrink-0 rounded-full ${accent.dot}`} />
                         <span>{challenge}</span>
                       </li>
                     ))}
@@ -96,7 +96,7 @@ export function SelectedWork() {
                       src={screenshot.src}
                       alt={screenshot.alt}
                       loading="lazy"
-                      className="rounded-2xl border border-slate-200 shadow-sm"
+                      className={`rounded-2xl ${borders.hair} shadow-sm`}
                     />
                   ))}
                 </div>

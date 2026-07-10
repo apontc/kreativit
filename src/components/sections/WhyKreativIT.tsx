@@ -10,11 +10,11 @@ export function WhyKreativIT() {
             {whyKreativIT.eyebrow}
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className={`mt-3 text-3xl font-bold tracking-tight sm:text-4xl ${text.heading}`}>
             {whyKreativIT.heading}
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-slate-700">
+          <p className={`mt-5 text-lg leading-8 ${text.body}`}>
             {whyKreativIT.intro}
           </p>
         </div>
@@ -23,13 +23,13 @@ export function WhyKreativIT() {
           {whyKreativIT.reasons.map((reason) => (
             <article
               key={reason.title}
-              className={`rounded-3xl border border-slate-200 ${surfaces.card} p-6 shadow-sm`}
+              className={`rounded-3xl ${surfaces.card} p-6 shadow-sm`}
             >
-              <h3 className="text-lg font-semibold text-slate-950">
+              <h3 className={`text-lg font-semibold ${text.heading}`}>
                 {reason.title}
               </h3>
 
-              <p className="mt-3 leading-7 text-slate-700">
+              <p className={`mt-3 leading-7 ${text.body}`}>
                 {reason.description}
               </p>
             </article>

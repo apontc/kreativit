@@ -14,7 +14,8 @@
       "PowerShell(git commit -m \"style: centralize section surfaces into warm cream/plain token\")",
       "PowerShell(git add src/styles/designTokens.ts src/components/sections/WhyKreativIT.tsx src/components/sections/SelectedWork.tsx src/components/sections/Contact.tsx)",
       "PowerShell(git commit -m \"style: warm card surfaces with stone token\")",
-      "PowerShell(git add -A)"
+      "PowerShell(git add -A)",
+      "PowerShell(npm run build)"
     ]
   }
 }

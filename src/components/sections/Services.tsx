@@ -1,5 +1,5 @@
 import { services } from '../../data/services'
-import { layout, surfaces, text } from '../../styles/designTokens'
+import { borders, layout, surfaces, text } from '../../styles/designTokens'
 
 export function Services() {
   return (
@@ -10,11 +10,11 @@ export function Services() {
             Services
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h2 className={`mt-3 text-3xl font-bold tracking-tight sm:text-4xl ${text.heading}`}>
             What I can help you build
           </h2>
 
-          <p className="mt-4 text-lg text-slate-600">
+          <p className={`mt-4 text-lg ${text.body}`}>
             Whether you're starting from scratch or improving an existing
             website, I build reliable solutions that are easy to use and easy to
             maintain.
@@ -25,13 +25,13 @@ export function Services() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-orange-300"
+              className={`rounded-2xl ${borders.hair} bg-white p-6 transition hover:border-[#A76731]`}
             >
-              <h3 className="text-xl font-semibold text-slate-950">
+              <h3 className={`text-xl font-semibold ${text.heading}`}>
                 {service.title}
               </h3>
 
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className={`mt-3 leading-7 ${text.body}`}>
                 {service.description}
               </p>
             </article>
