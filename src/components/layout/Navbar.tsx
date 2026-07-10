@@ -108,27 +108,28 @@ export function Navbar() {
           </button>
         </div>
 
-        {isMenuOpen && (
-          <div
-            id="mobile-menu"
-            className="absolute inset-x-0 top-full border-t border-[#D8C3A6] bg-white shadow-lg md:hidden"
-          >
-            <div className={`mx-auto max-w-6xl ${layout.gutter} py-4`}>
-              <div className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={closeMenu}
-                    className={text.interactive}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
+        <div
+          id="mobile-menu"
+          data-open={isMenuOpen}
+          aria-hidden={!isMenuOpen}
+          className="menu-panel absolute inset-x-0 top-full border-t border-[#D8C3A6] bg-white shadow-lg md:hidden"
+        >
+          <div className={`mx-auto max-w-6xl ${layout.gutter} py-4`}>
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  tabIndex={isMenuOpen ? undefined : -1}
+                  className={text.interactive}
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   )

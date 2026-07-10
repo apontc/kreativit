@@ -48,8 +48,10 @@ export const text = {
 };
 
 // Amber-wood accent — the single "pop" color across the page.
+// NOTE: #A76731 is AA only for large text, fills, or on white. For SMALL text on
+// cream it drops to ~4.1:1 — use the darker #8F5629 (see text.eyebrow) instead.
 export const accent = {
-  text: "text-[#A76731]",
+  text: "text-[#A76731]", // large text / on white only — see note above
   hover: "hover:text-[#A76731]",
   dot: "bg-[#A76731]", // filled markers (bullets)
   chip: "bg-[#F2E7D5] text-[#A76731]", // soft wood-tint pill (tags)

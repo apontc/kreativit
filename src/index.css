@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+/* Mobile menu panel: slide-down + fade on open, reverse on close. `visibility`
+   is held until the fade-out finishes so the panel drops out of the tab order
+   and accessibility tree when closed (which plain opacity can't do). */
+@layer components {
+  .menu-panel {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    visibility: hidden;
+    transition: opacity 200ms ease-out, transform 200ms ease-out,
+      visibility 0s linear 200ms;
+  }
+
+  .menu-panel[data-open="true"] {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-panel {
+    transition: none;
+  }
+}
