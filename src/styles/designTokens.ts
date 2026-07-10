@@ -1,7 +1,14 @@
 // src/styles/designTokens.ts
 // Shared Tailwind class strings — single source of truth for spacing, type, and color.
-// Palette: WOOD — light cream base (#F8F4ED) with a wood-tan accent band (#E5D1B9),
-// navy ink (#1E2A37), amber-wood accent (#A76731), slate-blue secondary (#666D76).
+//
+// Palette: WOOD — every color is referenced through the tokens below. Keep a
+// critical eye on contrast (WCAG AA: 4.5:1 for normal text) before adding or
+// reusing a color, and never let a control blend into its background.
+//   Base ramp:  #F8F4ED cream · #FFFFFF white · #F2E7D5 chip tint · #EADFCB focus ring
+//   Wood-tan:   #E7DAC6 hairline · #E5D1B9 band/surface · #D8C3A6 strong border
+//   Amber:      #A76731 accent (fills / large text / on white) · #8F5629 amber-dark
+//               (button hover, and AA-safe small text — e.g. the eyebrow on cream)
+//   Ink/slate:  #1E2A37 navy heading · #5B6470 slate body & muted text
 
 // Side gutter — single source for horizontal breathing room. Baked into
 // `container`; apply `layout.gutter` directly on any wrapper that sets its own
@@ -33,10 +40,10 @@ export const borders = {
 };
 
 export const text = {
-  eyebrow: "text-sm font-semibold uppercase tracking-[0.25em] text-[#A76731]",
+  eyebrow: "text-sm font-semibold uppercase tracking-[0.25em] text-[#8F5629]", // amber-dark: AA-safe for small text on cream
   heading: "text-[#1E2A37]", // navy ink (~slate-800)
-  body: "text-[#5B6470]",
-  link: "text-[#666D76] underline-offset-4 hover:underline hover:text-[#525963]",
+  body: "text-[#5B6470]", // one muted slate; body, link, and interactive all share it
+  link: "text-[#5B6470] underline-offset-4 hover:underline hover:text-[#1E2A37]",
   interactive: "text-[#5B6470] hover:text-[#1E2A37]", // muted → ink on hover (nav, footer, inline links)
 };
 
