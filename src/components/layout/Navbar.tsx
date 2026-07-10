@@ -23,6 +23,7 @@ const navLinks = [
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const navRef = useRef<HTMLElement>(null)
 
   function closeMenu() {
@@ -50,8 +51,21 @@ export function Navbar() {
     }
   }, [isMenuOpen])
 
+  // Lift the navbar with a subtle shadow once the page is scrolled past the top.
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 8)
+    }
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <header ref={navRef} className={`sticky top-0 z-50 ${surfaces.band}`}>
+    <header
+      ref={navRef}
+      className={`sticky top-0 z-50 ${surfaces.band} transition-shadow ${isScrolled ? "shadow-md" : ""}`}
+    >
       <nav className={`mx-auto max-w-6xl ${layout.gutter}`}>
         <div className="flex h-16 items-center justify-between">
           <a
