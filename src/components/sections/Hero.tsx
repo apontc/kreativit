@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className={`${layout.section} ${surfaces.cream} flex min-h-[calc(100vh-4rem)] items-center ${text.heading}`}
+      className={`${layout.section} ${surfaces.cream} flex sm:min-h-[calc(100vh-4rem)] sm:items-center ${text.heading}`}
     >
       <div className={`${layout.container} flex flex-col gap-8`}>
         <p className={text.eyebrow}>

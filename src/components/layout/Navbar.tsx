@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { layout, surfaces, text } from "../../styles/designTokens";
+import { useEffect, useRef, useState } from "react"
+import { borders, layout, surfaces, text } from "../../styles/designTokens";
 
 
 const navLinks = [
@@ -23,13 +23,35 @@ const navLinks = [
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
 
   function closeMenu() {
     setIsMenuOpen(false)
   }
 
+  // Close the mobile menu when clicking outside the navbar or pressing Escape.
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    function handlePointerDown(event: PointerEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
+    }
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setIsMenuOpen(false)
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown)
+    document.addEventListener("keydown", handleKeyDown)
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown)
+      document.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [isMenuOpen])
+
   return (
-    <header className={`sticky top-0 z-50 ${surfaces.band}`}>
+    <header ref={navRef} className={`sticky top-0 z-50 ${surfaces.band}`}>
       <nav className={`mx-auto max-w-6xl ${layout.gutter}`}>
         <div className="flex h-16 items-center justify-between">
           <a
@@ -55,7 +77,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsMenuOpen((current) => !current)}
-            className={`inline-flex items-center justify-center rounded-md p-2 md:hidden ${text.heading} hover:bg-[#D8C3A6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A76731]`}
+            className={`inline-flex items-center justify-center rounded-md bg-white p-2 md:hidden ${borders.strong} ${text.heading} hover:bg-[#F2E7D5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A76731]`}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -87,18 +109,23 @@ export function Navbar() {
         </div>
 
         {isMenuOpen && (
-          <div id="mobile-menu" className="border-t border-[#D8C3A6] py-4 md:hidden">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={closeMenu}
-                  className={text.interactive}
-                >
-                  {link.label}
-                </a>
-              ))}
+          <div
+            id="mobile-menu"
+            className="absolute inset-x-0 top-full border-t border-[#D8C3A6] bg-white shadow-lg md:hidden"
+          >
+            <div className={`mx-auto max-w-6xl ${layout.gutter} py-4`}>
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className={text.interactive}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}
