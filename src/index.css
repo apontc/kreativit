@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
-/* Mobile menu panel: slide-down + fade on open, reverse on close. `visibility`
-   is held until the fade-out finishes so the panel drops out of the tab order
-   and accessibility tree when closed (which plain opacity can't do). */
+/* Smooth in-page navigation for anchor links — unless the user prefers less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer components {
+  /* Mobile menu panel: slide-down + fade on open, reverse on close. `visibility`
+     is held until the fade-out finishes so the panel drops out of the tab order
+     and accessibility tree when closed (which plain opacity can't do). */
   .menu-panel {
     opacity: 0;
     transform: translateY(-0.5rem);
@@ -18,10 +25,30 @@
     visibility: visible;
     transition: opacity 200ms ease-out, transform 200ms ease-out;
   }
+
+  /* Scroll-reveal: content fades + rises as it enters the viewport. Driven by the
+     <Reveal> component, which flips data-revealed the first time it's seen. */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+
+  [data-reveal][data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+  }
 }
 
+/* Motion-reduced: keep everything static and fully visible — never hide content. */
 @media (prefers-reduced-motion: reduce) {
   .menu-panel {
+    transition: none;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
     transition: none;
   }
 }

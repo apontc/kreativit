@@ -1,11 +1,12 @@
 import { services } from '../../data/services'
 import { borders, layout, surfaces, text } from '../../styles/designTokens'
+import { Reveal } from '../ui/Reveal'
 
 export function Services() {
   return (
     <section id="services" className={`${surfaces.plain} ${layout.section}`}>
       <div className={layout.container}>
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className={text.eyebrow}>
             Services
           </p>
@@ -19,22 +20,23 @@ export function Services() {
             website, I build reliable solutions that are easy to use and easy to
             maintain.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {services.map((service) => (
-            <article
-              key={service.title}
-              className={`rounded-2xl ${borders.hair} bg-white p-6`}
-            >
-              <h3 className={`text-xl font-semibold ${text.heading}`}>
-                {service.title}
-              </h3>
+          {services.map((service, index) => (
+            <Reveal key={service.title} delay={index * 80}>
+              <article
+                className={`rounded-2xl ${borders.hair} bg-white p-6`}
+              >
+                <h3 className={`text-xl font-semibold ${text.heading}`}>
+                  {service.title}
+                </h3>
 
-              <p className={`mt-3 leading-7 ${text.body}`}>
-                {service.description}
-              </p>
-            </article>
+                <p className={`mt-3 leading-7 ${text.body}`}>
+                  {service.description}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,11 +1,12 @@
 import { selectedWork } from "../../data/selectedWork";
 import { accent, borders, layout, surfaces, text } from "../../styles/designTokens";
+import { Reveal } from "../ui/Reveal";
 
 export function SelectedWork() {
   return (
     <section id="work" className={`${surfaces.plain} ${layout.section}`}>
       <div className={layout.container}>
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className={text.eyebrow}>
             {selectedWork.eyebrow}
           </p>
@@ -17,14 +18,14 @@ export function SelectedWork() {
           <p className={`mt-5 text-lg leading-8 ${text.body}`}>
             {selectedWork.intro}
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 space-y-8">
-          {selectedWork.projects.map((project) => (
-            <article
-              key={project.title}
-              className={`rounded-3xl ${surfaces.card} p-6 shadow-sm sm:p-8`}
-            >
+          {selectedWork.projects.map((project, index) => (
+            <Reveal key={project.title} delay={index * 80}>
+              <article
+                className={`rounded-3xl ${surfaces.card} p-6 shadow-sm sm:p-8`}
+              >
               <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
                 <div>
                   <h3 className={`text-2xl font-bold tracking-tight ${text.heading}`}>
@@ -101,7 +102,8 @@ export function SelectedWork() {
                   ))}
                 </div>
               )}
-            </article>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { contact } from "../../data/contact";
 import { accent, borders, layout, surfaces, text } from "../../styles/designTokens";
+import { Reveal } from "../ui/Reveal";
 
 export function Contact() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -22,7 +23,7 @@ export function Contact() {
   return (
     <section id="contact" className={`${surfaces.cream} ${layout.section} min-h-[calc(100vh-4rem)]`}>
       <div className={`mx-auto grid max-w-6xl gap-12 ${layout.gutter} lg:grid-cols-[0.9fr_1.1fr] lg:items-start`}>
-        <div>
+        <Reveal>
           <p className={text.eyebrow}>
             {contact.eyebrow}
           </p>
@@ -57,12 +58,13 @@ export function Contact() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <form
-          onSubmit={handleSubmit}
-          className={`rounded-3xl ${surfaces.card} p-6 shadow-sm sm:p-8`}
-        >
+        <Reveal delay={120}>
+          <form
+            onSubmit={handleSubmit}
+            className={`rounded-3xl ${surfaces.card} p-6 shadow-sm sm:p-8`}
+          >
           <div className="grid gap-6">
             <div>
               <label
@@ -121,7 +123,8 @@ export function Contact() {
               Send message
             </button>
           </div>
-        </form>
+          </form>
+        </Reveal>
       </div>
     </section>
   );
